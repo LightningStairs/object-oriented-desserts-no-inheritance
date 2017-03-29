@@ -27,6 +27,9 @@ describe Pie do
       expect(@apple_pie.filling).to be_a(Recipe)
       expect(@apple_pie.filling.instructions).to be_a(Array)
       expect(@apple_pie.name).to eq("Apple Pie")
+    end
+
+    it "initializes with an amount of 0" do
       expect(@apple_pie.amount).to eq(0)
     end
   end
@@ -38,6 +41,7 @@ describe Pie do
       @apple_pie.bake!
 
       expect(@apple_pie.amount).to eq(3)
+      expect(@apple_pie.bake!).to eq("We have 4 pie(s), fresh out of the oven!")
     end
   end
 
@@ -46,6 +50,4 @@ describe Pie do
       expect(@apple_pie.print_pie_recipe).to eq("APPLE PIE\nAll Butter Crust \n\nIngredients\n- 1 tablespoon sugar\n- 2.5 cups flour\n- 6 tablespoons water\n- 2 sticks butter\n- 0.75 teaspoon salt\n\nInstructions\n1. whisk together sugar, flour, and salt\n2. cut in butter until it becomes a coarse meal\n3. gradually add water until dough comes together\n4. wrap in plastic and chill\n\nApple Pie Filling \n\nIngredients\n- 1 cup sugar\n- 1 tablespoon cinnamon\n- 4 large apples\n\nInstructions\n1. slice apples\n2. toss apples with sugar and cinnamon\n3. place in prepared crust\n4. cover with second crust\n5. crimp edges\n6. bake at 350 for 30 minutes\n\n")
     end
   end
-
-
 end
